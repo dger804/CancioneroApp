@@ -31,7 +31,7 @@ export function Register(){
                 <Form.Label>Confirmar contraseña</Form.Label>
                 <Form.Control
                   type="password"
-                  placeholder="Confirm Password"
+                  placeholder="Confirmar contraseña"
                   name="confirmPassword"
                   required
                 />
