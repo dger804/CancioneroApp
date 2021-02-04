@@ -21,7 +21,7 @@ export function Navigation() {
       </Nav>
       <Form inline>
         <FormControl type="text" placeholder="Buscar" className="mr-sm-2" />
-        <Button variant="outline-info">Buscar</Button>
+        <Button variant="outline-primary">Buscar</Button>
       </Form>
     </Navbar>
   )
