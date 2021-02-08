@@ -36,3 +36,9 @@
     transform: rotate(360deg);
   }
 }
+.registerForm{
+  background-color: rgb(85, 163, 226);
+  border-radius: 20px;
+  height: 482px;
+  padding: 25px;
+}
