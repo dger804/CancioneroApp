@@ -4,6 +4,7 @@ import '../App.css';
 import { regUser } from '../store/registerReducer'
 import { useDispatch, useSelector } from 'react-redux'
 import { useState, useEffect } from 'react';
+import Swal from 'sweetalert2'
 
 export function Register(){
   const history = useHistory();
@@ -38,7 +39,7 @@ export function Register(){
       [e.target.name]: e.target.value
     })
   }
-
+  
   const handleRegister = async (e) => {
     e.preventDefault();
     const { email, password, confirmPassword } = regForm
@@ -46,7 +47,12 @@ export function Register(){
     if(password === confirmPassword){
       dispatch(regUser(email, password))
     }else{
-      <Alert variant="danger">Contraseñas no coinciden</Alert>
+      Swal.fire({
+        title: 'Error!',
+        text: 'Las contraseñas no coinciden',
+        icon: 'error',
+        confirmButtonText: 'Intentar de nuevo'
+      })      
     }
   }
   const { email, password, confirmPassword } = regForm
