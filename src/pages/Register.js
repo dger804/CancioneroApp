@@ -1,4 +1,4 @@
-import { Container, Row, Col, Form, Button, Alert } from 'react-bootstrap';
+import { Container, Row, Col, Form, Button } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
 import '../App.css';
 import { regUser } from '../store/registerReducer'
@@ -20,9 +20,13 @@ export function Register(){
     const token = sessionStorage.getItem('token')
     if (token) {
       history.push('/')
-      return(
-        <Alert variant="succes">Bienvenido</Alert>
-      )
+      Swal.fire({
+        title: 'Cuenta creada con Exito!',
+        text: 'Bienvenido',
+        icon: 'success',
+        showConfirmButton: false,
+        timer: 1500
+      })
     }
   }, [register])
 
