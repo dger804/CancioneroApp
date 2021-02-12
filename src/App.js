@@ -9,6 +9,7 @@ import { BrowserRouter as Router,
 import { Home } from './pages/Home.js'
 import { Login } from './pages/Login';
 import { Register } from './pages/Register';
+import { SongBook } from './pages/SongBook';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
             <Route exact path="/" component={Home}/>
             <Route exact path="/Login" component={Login}/>
             <Route exact path="/Register" component={Register}/>
+            <Route exact path="/SongBook" component={SongBook}/>
             <Redirect from="*" to="/" />
           </Switch>
         </Router>
