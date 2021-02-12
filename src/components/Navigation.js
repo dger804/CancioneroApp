@@ -10,7 +10,6 @@ import {Navbar,
   } from 'react-bootstrap'
 import { useHistory } from 'react-router-dom';
 
-
 export function Navigation() {
   const history = useHistory(); 
   const token = sessionStorage.getItem('token');
