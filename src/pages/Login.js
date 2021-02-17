@@ -15,18 +15,6 @@ export function Login(){
       return { login, loading }
     }
   )
-/*
-  useEffect(() => {
-    if(errorLog){
-      Swal.fire({
-        title: 'Error!',
-        text: `${ errorLog.message }`,
-        icon: 'error',
-        confirmButtonText: 'Intentar de nuevo'
-      })
-      dispatch( cleanuperror( errorLog ) )
-    }
-  },[errorLog])*/
 
   useEffect(() => {
     const token = sessionStorage.getItem('token')
@@ -38,25 +26,29 @@ export function Login(){
         showConfirmButton: false,
         timer: 1500
       })
-      history.push('/')
+      history.push('/SongBook')
     }
   },[login])
+
   const [ loginForm, setLoginForm ] = useState({
     email: "",
     userType: "user",
     password: "",
   })
+
   const handleChange = e => {
     setLoginForm({
       ...loginForm,
       [e.target.name]: e.target.value
     })
   }
+
   const handleLogin = async e =>{
     e.preventDefault();
     const { email, password } = loginForm;
     dispatch(userLogin(email, password));
   }
+
   const { email, password } = loginForm
   return(
     <div className="main">
